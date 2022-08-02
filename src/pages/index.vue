@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const user = useUserStore()
-const name = $ref(user.savedName)
+const name = ref('')
+const namefromStore = $ref(user.savedName)
+
+watch(name, (newValue) => {
+  console.log('ever feel like somebody\'s watching you? name:', newValue)
+})
 
 const router = useRouter()
 const go = () => {
@@ -18,7 +23,7 @@ const { t } = useI18n()
     </div>
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
+        Github Search
       </a>
     </p>
     <p>

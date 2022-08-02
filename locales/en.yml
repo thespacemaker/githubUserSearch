@@ -6,7 +6,7 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
-  desc: Opinionated Vite Starter Template
+  desc: Type a User's Name below to search for them on github.
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!
   aka: Also known as

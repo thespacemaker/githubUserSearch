@@ -1,3 +1,19 @@
+# Github Search Application
+Alright! so I'm giving myself a nice little two hour challenge.
+- 🗂 [Track for this challenge - Eli & Fur live from Courmayeur, Skyway Monte Bianco](https://www.youtube.com/watch?v=KwGe18AdFUE)
+
+
+#### Task LIst
+- [x] Choose a dope template
+- [ ] Single page with a single search bar
+- [ ] Add User Search
+- [ ] Add User Search
+- [ ] Add User Search
+- [ ] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
+- [ ] Add pagination
+- [ ] Link to repositories
+
+
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/11247099/154486817-f86b8f20-5463-4122-b6e9-930622e757f2.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
 </p>
