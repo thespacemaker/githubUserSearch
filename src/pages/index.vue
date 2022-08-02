@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios'
+
 const githubToken = import.meta.env.VITE_GITHUB_TOKEN
 const user = useUserStore()
 const name = ref('')
@@ -69,7 +70,7 @@ const { t } = useI18n()
     </div>
     <div v-if="user.userList">
       <div v-for="(listItem, index) in user.userList.items" :key="listItem.id" class="pa-4 ma-4 border-cyan rounded-xl justify-left border-2 w-200 mx-auto">
-        <UserResults :user="listItem" />
+        <UserResults :user="listItem" :index="index" />
       </div>
     </div>
   </div>

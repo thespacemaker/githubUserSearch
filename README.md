@@ -6,8 +6,8 @@ Alright! so I'm giving myself a nice little two hour challenge.
 #### Task LIst
 - [x] Choose a dope template
 - [x] Single page with a single search bar
-- [ ] Add User Search
-- [ ] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
+- [x] Add User Search
+- [/] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
 - [ ] Add pagination
 - [ ] Link to repositories
 
