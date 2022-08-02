@@ -7,14 +7,19 @@ const name = ref('')
 const namefromStore = $ref(user.savedName)
 
 watch(name, (newValue) => {
-  axios.get(`https://api.github.com/search/users?q=${newValue}`, {
-    headers: {
-      Authorization: `token ${githubToken}`,
-    },
-  })
-    .then((response) => {
-      user.setList(response.data)
+  try {
+    axios.get(`https://api.github.com/search/users?q=${newValue}`, {
+      headers: {
+        Authorization: `token ${githubToken}`,
+      },
     })
+      .then((response) => {
+        user.setList(response.data)
+      })
+  }
+  catch (error) {
+    console.log(error)
+  }
 })
 
 const router = useRouter()

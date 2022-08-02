@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import axios from 'axios'
-
 const props = defineProps<{ user: any; index: number }>()
 const githubToken = import.meta.env.VITE_GITHUB_TOKEN
 

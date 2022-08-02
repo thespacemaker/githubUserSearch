@@ -8,15 +8,19 @@ const router = useRouter()
 const { t } = useI18n()
 const userInfo = ref({})
 const blog = ref('')
-
-axios.get(props.url, {
-  headers: {
-    Authorization: `token ${githubToken}`,
-  },
-})
-  .then((response) => {
-    userInfo.value = response.data
+try {
+  axios.get(props.url, {
+    headers: {
+      Authorization: `token ${githubToken}`,
+    },
   })
+    .then((response) => {
+      userInfo.value = response.data
+    })
+}
+catch (error) {
+  console.log(error)
+}
 </script>
 
 <template>
