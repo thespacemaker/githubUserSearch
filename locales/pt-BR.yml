@@ -12,3 +12,20 @@ intro:
   aka: Também conhecido como
   whats-your-name: Qual é o seu nome?
 not-found: Não encontrado
+search:
+  search: Github Search
+  username: Username
+  view: View Profile
+  repos: View Repos
+  details: View Details
+  details-hide: Hide Details
+details:
+  name: Name
+  location: Location
+  email: Email
+  create: Created Profile
+  repos: Number of Public Repos
+  gists: Number of Public Gists
+  followers: Followers
+  blog: Blog
+  updated: Last Updated

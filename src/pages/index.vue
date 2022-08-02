@@ -14,7 +14,6 @@ watch(name, (newValue) => {
   })
     .then((response) => {
       user.setList(response.data)
-      console.log(user.userList)
     })
 })
 
@@ -30,11 +29,11 @@ const { t } = useI18n()
 <template>
   <div>
     <div text-4xl>
-      <div i-carbon-campsite inline-block />
+      <div animate-bounce-alt animate-count-infinite animate-duration-4s i-carbon-campsite inline-block />
     </div>
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Github Search
+        {{ t('search.search') }}
       </a>
     </p>
     <p>
@@ -62,11 +61,18 @@ const { t } = useI18n()
 
     <div>
       <button
+        v-if="!name"
         btn m-3 text-sm
         :disabled="!name"
         @click="go"
       >
         {{ t('button.go') }}
+      </button>
+      <button
+        v-if="name"
+        btn m-3 text-sm
+      >
+        {{ t('button.woah') }}
       </button>
     </div>
     <div v-if="user.userList">

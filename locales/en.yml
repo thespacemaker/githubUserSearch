@@ -2,13 +2,31 @@ button:
   about: About
   back: Back
   go: GO
+  woah: Woah!
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
-  desc: Type a User's Name below to search for them on github.
+  desc: Type a Username below to search for them on github.
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!
   aka: Also known as
   whats-your-name: Who are we searching for?
+search:
+  search: Github Search
+  username: Username
+  view: View Profile
+  repos: View Repos
+  details: View Details
+  details-hide: Hide Details
+details:
+  name: Name
+  location: Location
+  email: Email
+  create: Created Profile
+  repos: Number of Public Repos
+  gists: Number of Public Gists
+  followers: Followers
+  blog: Blog
+  updated: Last Updated
 not-found: Not found

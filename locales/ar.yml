@@ -11,4 +11,21 @@ intro:
   hi: مرحبا {name}
   aka: معروف أيضا تحت مسمى
   whats-your-name: ما إسمك؟
+search:
+  search: Github Search
+  username: Username
+  view: View Profile
+  repos: View Repos
+  details: View Details
+  details-hide: Hide Details
+details:
+  name: Name
+  location: Location
+  email: Email
+  create: Created Profile
+  repos: Number of Public Repos
+  gists: Number of Public Gists
+  followers: Followers
+  blog: Blog
+  updated: Last Updated
 not-found: صفحة غير موجودة

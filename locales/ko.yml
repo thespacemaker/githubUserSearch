@@ -11,3 +11,20 @@ intro:
   hi: 안녕, {name}!
   whats-your-name: 이름이 뭐예요?
 not-found: 찾을 수 없습니다
+search:
+  search: Github Search
+  username: Username
+  view: View Profile
+  repos: View Repos
+  details: View Details
+  details-hide: Hide Details
+details:
+  name: Name
+  location: Location
+  email: Email
+  create: Created Profile
+  repos: Number of Public Repos
+  gists: Number of Public Gists
+  followers: Followers
+  blog: Blog
+  updated: Last Updated

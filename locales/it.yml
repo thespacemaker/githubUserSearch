@@ -10,4 +10,21 @@ intro:
   dynamic-route: Demo di rotta dinamica
   hi: Ciao, {name}!
   whats-your-name: Come ti chiami?
+search:
+  search: Github Search
+  username: Username
+  view: View Profile
+  repos: View Repos
+  details: View Details
+  details-hide: Hide Details
+details:
+  name: Name
+  location: Location
+  email: Email
+  create: Created Profile
+  repos: Number of Public Repos
+  gists: Number of Public Gists
+  followers: Followers
+  blog: Blog
+  updated: Last Updated
 not-found: Non trovato

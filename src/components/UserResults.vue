@@ -11,20 +11,20 @@ const isShowing = ref(false)
 
 <template>
   <div flex justify-center flex-wrap>
-    <img v-if="isShowing === index" animate-bounce-alt animate-count-infinite animate-duration-4s class="flex flex-shrink mx-4 w-20  align-middle" :src="props.user.avatar_url">
+    <img v-if="isShowing" animate-bounce-alt animate-count-infinite animate-duration-4s class="flex flex-shrink mx-4 w-20  align-middle" :src="props.user.avatar_url">
     <img v-else class="flex flex-shrink mx-4 w-20  align-middle" :src="props.user.avatar_url">
     <div class="flex flex-col flex-grow-2 justify-center">
       <p text-2xl class="text-left">
-        <small>username: </small>{{ props.user.login }}
+        <small>{{ t('search.username') }}: </small>{{ props.user.login }}
       </p>
-      <p class="text-left">
+      <!-- <p class="text-left">
         followers: {{ props.user.login }}
-      </p>
+      </p> -->
     </div>
     <div justify-center class="flex flex-col flex-grow">
       <div flex class="justify-right">
         <a class="text-right" :href="props.user.html_url">
-          View Profile
+          {{ t('search.view') }}
         </a>
         <a class="text-right" :href="props.user.html_url">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -35,7 +35,7 @@ const isShowing = ref(false)
 
       <div flex>
         <a class="text-right" :href="props.user.repos_url">
-          View Repos
+          {{ t('search.repos') }}
         </a>
         <a class="text-right" :href="props.user.repos_url">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -50,13 +50,13 @@ const isShowing = ref(false)
       v-if="!isShowing"
       @click="isShowing = !isShowing"
     >
-      View Details
+      {{ t('search.details') }}
     </button>
     <button
       v-if="isShowing"
       @click="isShowing = !isShowing"
     >
-      Hide Details
+      {{ t('search.details-hide') }}
     </button>
   </div>
   <div v-if="isShowing">
