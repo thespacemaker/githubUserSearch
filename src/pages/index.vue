@@ -1,10 +1,19 @@
 <script setup lang="ts">
+import axios from 'axios'
+const githubToken = import.meta.env.VITE_GITHUB_TOKEN
 const user = useUserStore()
 const name = ref('')
 const namefromStore = $ref(user.savedName)
 
 watch(name, (newValue) => {
-  console.log('ever feel like somebody\'s watching you? name:', newValue)
+  axios.get(`https://api.github.com/search/users?q=${newValue}`, {
+    headers: {
+      Authorization: `token ${githubToken}`,
+    },
+  })
+    .then((response) => {
+      console.log(response.data.items)
+    })
 })
 
 const router = useRouter()
