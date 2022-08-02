@@ -12,7 +12,7 @@ watch(name, (newValue) => {
     },
   })
     .then((response) => {
-      console.log(response.data.items)
+      user.setList(response.data)
     })
 })
 
@@ -66,6 +66,11 @@ const { t } = useI18n()
       >
         {{ t('button.go') }}
       </button>
+    </div>
+    <div v-if="user.userList">
+      <div v-for="(listItem, index) in user.userList.items" :key="listItem.id" class="pa-4 ma-4 border-cyan rounded-xl justify-left border-2 w-200 mx-auto">
+        <UserResults :user="listItem" />
+      </div>
     </div>
   </div>
 </template>

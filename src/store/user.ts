@@ -5,6 +5,7 @@ export const useUserStore = defineStore('user', () => {
    * Current name of the user.
    */
   const savedName = ref('')
+  const userList = ref([{}])
   const previousNames = ref(new Set<string>())
 
   const usedNames = computed(() => Array.from(previousNames.value))
@@ -23,10 +24,19 @@ export const useUserStore = defineStore('user', () => {
     savedName.value = name
   }
 
+  function setList(list: any) {
+    if (list)
+      userList.value = list
+
+    // savedName.value = name
+  }
+
   return {
     setNewName,
+    setList,
     otherNames,
     savedName,
+    userList,
   }
 })
 
