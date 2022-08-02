@@ -15,34 +15,48 @@ const isShowing = ref(false)
     <img v-else class="flex flex-shrink mx-4 w-20  align-middle" :src="props.user.avatar_url">
     <div class="flex flex-col flex-grow-2 justify-center">
       <p text-2xl class="text-left">
-        username: <small>{{ props.user.login }}</small>
+        <small>username: </small>{{ props.user.login }}
       </p>
       <p class="text-left">
         followers: {{ props.user.login }}
       </p>
     </div>
-    <div class="flex flex-col justify-center text-right">
-      <a class="text-right" :href="props.user.url">
-        View Profile
-      </a>
-      <p class="text-right">
-        followers: {{ props.user.login }}
-      </p>
-    </div>
     <div justify-center class="flex flex-col flex-grow">
-      <p class="text-right">
-        followers: {{ props.user.followers }}
-      </p>
-      <p class="text-right">
-        followers: {{ props.user.following }}
-      </p>
+      <div flex class="justify-right">
+        <a class="text-right" :href="props.user.html_url">
+          View Profile
+        </a>
+        <a class="text-right" :href="props.user.html_url">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <div flex>
+        <a class="text-right" :href="props.user.repos_url">
+          View Repos
+        </a>
+        <a class="text-right" :href="props.user.repos_url">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
   <div flex flex-col justify-center bottom-5 right-0 left-0 text-center op30 fw300>
     <button
-      @click="isShowing = true"
+      v-if="!isShowing"
+      @click="isShowing = !isShowing"
     >
       View Details
+    </button>
+    <button
+      v-if="isShowing"
+      @click="isShowing = !isShowing"
+    >
+      Hide Details
     </button>
   </div>
   <div v-if="isShowing">

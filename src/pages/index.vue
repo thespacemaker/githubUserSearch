@@ -14,6 +14,7 @@ watch(name, (newValue) => {
   })
     .then((response) => {
       user.setList(response.data)
+      console.log(user.userList)
     })
 })
 
@@ -69,7 +70,7 @@ const { t } = useI18n()
       </button>
     </div>
     <div v-if="user.userList">
-      <div v-for="(listItem, index) in user.userList.items" :key="listItem.id" class="pa-4 ma-4 border-cyan rounded-xl justify-left border-2 w-200 mx-auto">
+      <div v-for="(listItem, index) in user.userList.items" :key="listItem.id" class="pa-4 ma-4 border-cyan rounded-xl justify-left border-2 md:w-200 sm:w-100 mx-auto">
         <UserResults :user="listItem" :index="index" />
       </div>
     </div>

@@ -23,4 +23,9 @@ useHead({
 
 <template>
   <RouterView />
+  <p class="text-xs text-center">
+    Made with &#9825; by <a
+      href="https://adnan.io" target="_blank"
+    >Spacemaker</a>
+  </p>
 </template>

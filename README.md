@@ -7,7 +7,7 @@ Alright! so I'm giving myself a nice little two hour challenge.
 - [x] Choose a dope template
 - [x] Single page with a single search bar
 - [x] Add User Search
-- [/] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
+- [x] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
 - [ ] Add pagination
 - [ ] Link to repositories
 
