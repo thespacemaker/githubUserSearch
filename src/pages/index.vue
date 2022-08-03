@@ -19,7 +19,9 @@ async function search(name, page) {
       })
   }
   catch (error) {
-    alert(error)
+    /* eslint-disable no-console */
+    console.log(error)
+    /* eslint-enable no-console */
   }
 }
 
