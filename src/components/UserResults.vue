@@ -1,8 +1,5 @@
 <script setup lang="ts">
 const props = defineProps<{ user: any; index: number }>()
-const githubToken = import.meta.env.VITE_GITHUB_TOKEN
-
-const router = useRouter()
 const { t } = useI18n()
 const isShowing = ref(false)
 </script>

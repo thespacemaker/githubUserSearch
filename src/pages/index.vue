@@ -2,12 +2,11 @@
 import axios from 'axios'
 
 const githubToken = import.meta.env.VITE_GITHUB_TOKEN
-const user = useUserStore()
 const name = ref('')
 const pageNumber = ref(1)
-const namefromStore = $ref(user.savedName)
+const user = useUserStore()
 
-async function search(name, page) {
+async function search(name: string, page: number) {
   try {
     axios.get(`https://api.github.com/search/users?q=${name}&per_page=10&page=${page}`, {
       headers: {
@@ -32,12 +31,6 @@ watch(name, (newValue) => {
 watch(pageNumber, (newValue) => {
   search(name.value, newValue)
 })
-
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
-}
 
 const { t } = useI18n()
 </script>
@@ -71,7 +64,6 @@ const { t } = useI18n()
       bg="transparent"
       border="~ rounded gray-200 dark:gray-700"
       outline="none active:none"
-      @keydown.enter="go"
     >
     <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
 
@@ -83,7 +75,6 @@ const { t } = useI18n()
         v-if="!name"
         btn m-3 text-sm
         :disabled="!name"
-        @click="go"
       >
         {{ t('button.go') }}
       </button>

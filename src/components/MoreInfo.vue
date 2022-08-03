@@ -4,10 +4,8 @@ import axios from 'axios'
 const props = defineProps<{ url: string }>()
 
 const githubToken = import.meta.env.VITE_GITHUB_TOKEN
-const router = useRouter()
 const { t } = useI18n()
-const userInfo = ref({})
-const blog = ref('')
+const userInfo = ref<any>()
 try {
   axios.get(props.url, {
     headers: {
