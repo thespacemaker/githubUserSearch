@@ -91,7 +91,7 @@ const { t } = useI18n()
       >
         {{ t('button.woah') }}
       </button>
-      <button @click="(pageNumber++)">
+      <button v-if="name" @click="(pageNumber++)">
         next
       </button>
     </div>
