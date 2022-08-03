@@ -12,6 +12,7 @@ Alright! so I'm giving myself a nice little two hour challenge.
 - [x] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
 - [x] Add pagination
 - [ ] Link to repositories
+- [x] Add an easter egg in the deployed version... it shouldn't be too hard to find me...
 
 
 <p align='center'>
