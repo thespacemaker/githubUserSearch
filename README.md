@@ -8,7 +8,7 @@ Alright! so I'm giving myself a nice little two hour challenge.
 - [x] Single page with a single search bar
 - [x] Add User Search
 - [x] Add username, avatar, location, real name, email, count of public repositories, account creation timestamp, and last update timestamp.
-- [ ] Add pagination
+- [x] Add pagination
 - [ ] Link to repositories
 
 

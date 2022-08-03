@@ -4,11 +4,12 @@ import axios from 'axios'
 const githubToken = import.meta.env.VITE_GITHUB_TOKEN
 const user = useUserStore()
 const name = ref('')
+const pageNumber = ref(1)
 const namefromStore = $ref(user.savedName)
 
-watch(name, (newValue) => {
+async function search(name, page) {
   try {
-    axios.get(`https://api.github.com/search/users?q=${newValue}`, {
+    axios.get(`https://api.github.com/search/users?q=${name}&per_page=10&page=${page}`, {
       headers: {
         Authorization: `token ${githubToken}`,
       },
@@ -18,8 +19,16 @@ watch(name, (newValue) => {
       })
   }
   catch (error) {
-    console.log(error)
+    alert(error)
   }
+}
+
+watch(name, (newValue) => {
+  search(newValue, pageNumber.value)
+})
+
+watch(pageNumber, (newValue) => {
+  search(name.value, newValue)
 })
 
 const router = useRouter()
@@ -64,7 +73,10 @@ const { t } = useI18n()
     >
     <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
 
-    <div>
+    <div flex justify-center>
+      <button v-if="pageNumber >= 2" @click="(pageNumber--)">
+        back
+      </button>
       <button
         v-if="!name"
         btn m-3 text-sm
@@ -78,6 +90,9 @@ const { t } = useI18n()
         btn m-3 text-sm
       >
         {{ t('button.woah') }}
+      </button>
+      <button @click="(pageNumber++)">
+        next
       </button>
     </div>
     <div v-if="user.userList">
